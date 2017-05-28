@@ -1,5 +1,6 @@
 ---
 layout: post
+comments: true
 title:  "A thought about associated type"
 date:   2017-05-27 15:32:24 +0700
 categories: jekyll update
