@@ -5,9 +5,15 @@ title:  "A thought about associated type"
 date:   2017-05-27 15:32:24 +0700
 categories: jekyll update
 ---
-Last week, I had to implement some tableviews which includes some custom cells. Those cells are totally different for each table. And I will need to continue for lot of screens. I started thinking how to do it in a generic way, easy to implement for all screens and also customizable.
-Now it's time to start implementation
 
+###Problem
+Last week, I had to implement some table views which includes some custom cells. Those cells are totally different for each table. And I will need to continue on a lot of screens. I started thinking how to do it in a generic way, easy to implement for all screens and also customizable.
+
+
+###Idea
+I started with MVVM pattern. To recap, the main idea of MVVM is the view-model layer. It provides methods to map from model's data to ui's data and also handle incoming events from user interface. So that, the idea here is to create abstractions of the view-model class, and a general table view controller which will handle all view-models. Each time, we have to render a table view, we will only need to prepare its view model class and tada, everything should be set without any extra implementation of `UITableviewDataSource`. Sound good? Let see how it is in implementation.
+
+###Impletation
 * First I define 2 protocols for our datasources and custom cells
 
 {% highlight swift %}
